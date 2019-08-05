@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A lightweight front-end web development framework. CSS structure will be based around the principles of OOCSS (Object-oriented CSS) and ITCSS (Inverted-triangle CSS).",
   "main": "index.js",
+  "repository": "git@github.com:kingturo/perspective.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development --open",
