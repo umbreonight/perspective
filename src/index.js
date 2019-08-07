@@ -1,2 +1,2 @@
-import '@scss/index.scss';
-import '@js/index';
+import '@scss/perspective';
+import '@js/perspective';
