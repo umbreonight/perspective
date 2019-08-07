@@ -1,0 +1,107 @@
+// Shared column styling
+
+@mixin grid-column-base() {
+  min-height: 1px;
+  padding-left: ($grid-gutter / 2);
+  padding-right: ($grid-gutter / 2);
+  position: relative;
+  width: 100%;
+}
+
+@mixin grid-container() {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: ($grid-gutter / 2);
+  padding-right: ($grid-gutter / 2);
+  width: 100%;
+}
+
+@mixin grid-container-max-widths() {
+  @include sm() {
+    max-width: $sm-container-max-width;
+  }
+
+  @include md() {
+    max-width: $md-container-max-width;
+  }
+
+  @include lg() {
+    max-width: $lg-container-max-width;
+  }
+
+  @include xl() {
+    max-width: $xl-container-max-width;
+  }
+}
+
+@mixin grid-container-fluid() {
+  margin: 0;
+  max-width: 100%;
+}
+
+@mixin grid-row() {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: ($grid-gutter / -2);
+  margin-left: ($grid-gutter / -2);
+}
+
+@mixin grid-column($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+@mixin grid-column-offset($size, $columns: $grid-columns) {
+  margin-left: percentage($size / $columns);
+}
+
+@mixin grid-generate-columns() {
+
+  @each $modifier,
+  $breakpoint in $grid-breakpoints {
+
+    @for $i from 1 through $grid-columns {
+      .col#{$modifier}-#{$i} {
+        @include grid-column-base();
+      }
+    }
+
+    @include rwd($breakpoint) {
+      .col#{$modifier} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .col#{$modifier}-offset-0 {
+        margin-left: 0;
+      }
+
+      .order#{$modifier}-first {
+        order: -1;
+      }
+
+      .order#{$modifier}-last {
+        order: $grid-columns + 1;
+      }
+
+      // @for $i from 0 through $grid-columns {
+      //   .order#{$modifier}-#{$i} { order: $i; }
+      // }
+
+      @for $i from 1 through $grid-columns {
+        .order#{$modifier}-#{$i} {
+          order: $i;
+        }
+
+        .col#{$modifier}-#{$i} {
+          @include grid-column($i, $grid-columns);
+        }
+
+        .col#{$modifier}-offset-#{$i} {
+          @include grid-column-offset($i, $grid-columns);
+        }
+      }
+    }
+  }
+}

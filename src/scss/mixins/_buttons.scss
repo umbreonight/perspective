@@ -1,0 +1,62 @@
+@mixin button-base {
+    -webkit-tap-highlight-color: transparent;
+    background-color: $button-background;
+    border-radius: $button-border-radius;
+    border: $button-border;
+    color: $button-color;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    height: $button-height;
+    letter-spacing: .5px;
+    line-height: $button-height;
+    margin: 7px 0;
+    outline: none;
+    padding: $button-padding;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s ease-out;
+    user-select: none;
+    vertical-align: middle;
+    overflow: hidden;
+
+    &:hover {
+        background-color: $button-background-hover;
+    }
+
+    & .icon {
+        line-height: inherit !important;
+        vertical-align: top !important;
+    }
+
+    &.large {
+        height: $button-large-height;
+        line-height: $button-large-height;
+        font-size: $button-large-font-size;
+        padding: 0 28px;
+
+        .icon {
+            font-size: $button-large-icon-font-size;
+        }
+    }
+
+    &.small {
+        height: $button-small-height;
+        line-height: $button-small-height;
+        font-size: $button-small-font-size;
+
+        .icon {
+            font-size: $button-small-icon-font-size;
+        }
+    }
+
+    &.block {
+        width: 100%;
+    }
+
+    &.rounded {
+        @include border-radius($button-height / 2);
+    }
+}

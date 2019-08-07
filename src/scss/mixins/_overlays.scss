@@ -1,0 +1,12 @@
+@mixin overlay {
+    &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 101%;
+        height: 101%;
+        background-color: rgba(0, 0, 0, 0.376);
+        z-index: 8015;
+    }
+}
