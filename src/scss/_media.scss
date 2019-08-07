@@ -1,0 +1,39 @@
+img {
+    &.responsive {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &.round {
+        border-radius: 100%;
+    }
+
+    &.raised {
+        @extend .z-depth-2;
+    }
+}
+
+.media {
+    display: flex;
+    flex-direction: row;
+    @include border-radius();
+
+    .media-image {
+        min-width: 45px;
+        padding: 0 15px 0 0;
+
+        &:not(:first-child) {
+            padding: 0 0 0 15px;
+        }
+
+        img {
+            @extend .responsive;
+        }
+    }
+
+    .media-title {
+        @extend .h4;
+        display: block;
+        margin: 0 0 1rem 0;
+    }
+}

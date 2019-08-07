@@ -1,0 +1,25 @@
+.container {
+    @include grid-container();
+    @include grid-container-max-widths();
+}
+
+.container-fluid {
+    @include grid-container();
+}
+
+.row {
+    @include grid-row();
+    
+    @for $i from 1 to $grid-columns {
+        .col-#{$i} {
+            @include grid-column-base();
+            @include grid-column($i, $grid-columns);
+        }
+    }
+    
+    @include grid-generate-columns();
+
+    &+& {
+        margin-top: $grid-gutter / 2;
+    }
+}

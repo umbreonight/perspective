@@ -1,0 +1,42 @@
+
+// @import '~material-icons/iconfont/material-icons.scss';
+@import '../../node_modules/material-icons/iconfont/material-icons.scss';
+
+.icon {
+    @include material-icons();
+    user-select: none;
+
+    &.right {
+        float: right;
+        margin-left: 10px;
+    }
+
+    &.left {
+        float: left;
+        margin-right: 10px;
+    }
+    
+    &.icon-18 {
+        font-size: 18px;
+    }
+    
+    &.icon-24 {
+        font-size: 24px;
+    }
+    
+    &.icon-36 {
+        font-size: 36px;
+    }
+    
+    &.icon-48 {
+        font-size: 48px;
+    }
+
+    &.icon-dark {
+        color: rgba(0, 0, 0, 0.54);
+    }
+    
+    &.icon-light {
+        color: rgba(255, 255, 255, 1);
+    }
+}
