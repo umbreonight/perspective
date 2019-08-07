@@ -13,12 +13,12 @@ module.exports = {
             template: './src/index.html',
             showErrors: true,
             filename: 'index.html',
-            favicon: './reboot.ico'
+            // favicon: './reboot.ico'
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
-            chunkFilename: 'sauce.css',
-            template: './src/scss/index.scss',
+            chunkFilename: 'perspective.css',
+            template: './src/scss/perspective.scss',
             publicPath: 'dist'
         }),
         new webpack.ProvidePlugin({

@@ -1,2 +1,2 @@
-import '@scss/perspective';
+import '@scss/perspective.scss';
 import '@js/perspective';
