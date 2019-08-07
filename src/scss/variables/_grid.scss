@@ -1,0 +1,30 @@
+// Breakpoints - em
+
+$sm: 41.143em !default;
+$md: 54.857em !default;
+$lg: 70.857em !default;
+$xl: 85.714em !default;
+
+$sm-container-max-width: 38.571em;
+$md-container-max-width: 51.429em;
+$lg-container-max-width: 68.571em;
+$xl-container-max-width: 81.429em;
+
+$grid-breakpoints: () !default;
+$grid-breakpoints: map-merge(("": 0,
+        "-sm": $sm,
+        "-md": $md,
+        "-lg": $lg,
+        "-xl": $xl), $grid-breakpoints);
+
+$grid-container-max-widths: () !default;
+$grid-container-max-widths: map-merge(("-sm": $sm-container-max-width,
+        "-md": $md-container-max-width,
+        "-lg": $lg-container-max-width,
+        "-xl": $xl-container-max-width), $grid-container-max-widths);
+
+// $grid-gutter: 30px !default;
+$grid-gutter: 1.5rem !default;
+$grid-columns: 12 !default;
+$element-top-margin: $grid-gutter/3 !default;
+$element-bottom-margin: ($grid-gutter*2)/3 !default;

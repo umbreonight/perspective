@@ -1,0 +1,21 @@
+// Shared styles
+$input-border: 1px solid $border !default;
+$input-focus-border: darken($primary, 10);
+$input-background-color: transparent !default;
+$input-font-size: $font-size-base !default;
+$input-icon-font-size: 1.3rem !default;
+$input-height: 40px !default;
+$input-padding: 0 16px !default;
+$input-border-radius: 2px !default;
+
+// Disabled styles
+$input-disabled-background: $gray-300 !default;
+$input-disabled-border: lighten($border, 5);
+$input-disabled-color: $gray-400 !default;
+
+// Error styles
+$input-error-border: $accent;
+$input-error-color: $accent !default;
+
+// Validation inputs
+$input-validate-border-right: 5px;

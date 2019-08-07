@@ -1,0 +1,63 @@
+/* 
+.button 
+.button-outline 
+.button-raised 
+.button-text 
+.button-floating 
+.button-round 
+
+*/
+
+// Shared styles
+
+$button-border: none !default;
+$button-background: $primary !default;
+$button-background-hover: lighten($button-background, 5%) !default;
+$button-color: $white !default;
+$button-font-size: $font-size-base !default;
+$button-icon-font-size: 1.3rem !default;
+$button-height: 40px !default;
+$button-padding: 0 16px !default;
+$button-border-radius: 2px !default;
+
+$button-outline-border: 1px solid $primary;
+$button-outline-border-hover: 1px solid lighten($primary, 5%) !default;
+$button-outline-background: transparent;
+$button-outline-color: $primary;
+$button-outline-color-hover: lighten($button-outline-color, 5%) !default;
+
+$button-text-border: 1px solid $primary;
+$button-text-border-hover: 1px solid lighten($primary, 5%) !default;
+$button-text-background: transparent;
+$button-text-color: $primary;
+$button-text-color-hover: lighten($button-outline-color, 5%) !default;
+
+// Disabled styles
+$button-disabled-background: #DFDFDF !default;
+$button-disabled-border: #9F9F9F !default;
+$button-disabled-color: #9F9F9F !default;
+
+// Large buttons
+$button-large-font-size: 15px !default;
+$button-large-icon-font-size: 1.6rem !default;
+$button-large-height: $button-height * 1.5 !default;
+$button-round-large-size: 56px !default;
+
+// Small buttons
+$button-small-font-size: 13px !default;
+$button-small-icon-font-size: 1.2rem !default;
+$button-small-height: $button-height * .9 !default;
+$button-round-small-size: $button-height * .9 !default;
+
+// Fixed button
+$button-floating-background: $accent !default;
+$button-floating-background-hover: lighten($button-floating-background, 5%) !default;
+$button-floating-color: $white !default;
+$button-floating-size: 56px;
+$button-floating-font-size: 24px;
+$button-floating-padding: 0 16px;
+$button-floating-gap: 16px;
+$button-floating-radius: 100%;
+
+$button-fixed-small-size: 40px;
+$button-fixed-small-padding: 0;
