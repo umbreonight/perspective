@@ -1,0 +1,89 @@
+.card {
+    @include box-shadow(1);
+    background-color: $card-bg-color;
+    border-radius: 2px;
+    transition: box-shadow .25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+// Base card-title styles
+
+.card-title {
+    font-family: $font-family-sans-serif;
+    font-size: 1.75rem;
+    font-weight: 300;
+    user-select: none;
+}
+
+.card-image {
+    position: relative;
+
+    // Image background for content
+    img {
+        display: block;
+        border-radius: 2px 2px 0 0;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        @extend .responsive;
+    }
+
+    .card-title {
+        color: $card-bg-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+        padding: $card-padding;
+    }
+}
+
+.card-content {
+    padding: $card-padding;
+    border-radius: 0 0 2px 2px;
+    flex-grow: 1;
+
+    p {
+        margin: 0;
+        color: inherit;
+    }
+
+    .card-title {
+        display: block;
+        line-height: 32px;
+        margin-bottom: 8px;
+
+        i {
+            line-height: 32px;
+        }
+    }
+}
+
+.card-action {
+    &:last-child {
+        border-radius: 0 0 2px 2px;
+    }
+
+    background-color: inherit; // Use inherit to inherit color classes
+    border-top: 1px solid rgba(160, 160, 160, .2);
+    position: relative;
+    padding: 16px $card-padding;
+
+    a:not([class^="button"]) {
+        color: $card-link-color;
+        margin-right: $card-padding;
+        transition: color .3s ease;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+            color: $card-link-color-light;
+        }
+    }
+}

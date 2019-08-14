@@ -24,6 +24,16 @@ components--
 --cards
 --modals
 --tables
+--banners
+--breadcrumbs
+--carousel
+--media
+--navigation
+--preloader
+--sidenav
+--tooltips
+--dropdowns
+--app-bars
 
 CSS class system
 

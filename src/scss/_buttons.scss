@@ -1,0 +1,156 @@
+/* 
+.button 
+.button-outline 
+.button-raised 
+.button-text 
+.button-floating 
+.button-round 
+
+*/
+
+button {
+    @include button-base;
+}
+
+// Shared
+
+a.button,
+button.button {
+    @include button-base;
+    background-color: $button-background;
+
+    &:hover {
+        background-color: $button-background-hover;
+    }
+
+    &.is-disabled,
+    &[disabled],
+    &:disabled {
+        background-color: $button-disabled-background !important;
+        color: $button-disabled-color !important;
+        cursor: default;
+    }
+}
+
+a.button-raised,
+button.button-raised {
+    @include button-base;
+    @include box-shadow(1);
+    background-color: $button-background;
+
+    &.is-disabled,
+    &[disabled],
+    &:disabled {
+        @include box-shadow(0);
+        background-color: $button-disabled-background !important;
+        color: $button-disabled-color !important;
+        cursor: default;
+    }
+}
+
+a.button-outline,
+button.button-outline {
+    @include button-base;
+
+    background-color: $button-outline-background;
+    border: $button-outline-border;
+    color: $button-outline-color;
+
+    &.is-disabled,
+    &[disabled],
+    &:disabled {
+        border-color: $button-disabled-border !important;
+        color: $button-disabled-color !important;
+        cursor: default;
+    }
+
+    &:hover {
+        background-color: inherit;
+        border: $button-outline-border-hover;
+        color: $button-outline-color-hover;
+    }
+}
+
+a.button-text,
+button.button-text {
+    @include button-base;
+
+    background-color: $button-text-background;
+    color: $button-text-color;
+    padding: 0;
+
+    &:hover {
+        background-color: inherit;
+        color: $button-text-color-hover;
+    }
+
+    &.is-disabled,
+    &[disabled],
+    &:disabled {
+        color: $button-disabled-color !important;
+        cursor: default;
+    }
+}
+
+a.button-floating,
+button.button-floating {
+    -webkit-tap-highlight-color: transparent; // Gets rid of tap active state
+    @include box-shadow(1);
+    background-color: $button-floating-background;
+    border: none;
+    border-radius: $button-floating-radius;
+    bottom: $button-floating-gap;
+    color: $button-floating-color;
+    cursor: pointer;
+    font-size: $button-floating-font-size;
+    height: $button-floating-size;
+    line-height: $button-floating-size;
+    outline: none;
+    overflow: hidden;
+    padding: $button-floating-padding;
+    position: fixed;
+    right: $button-floating-gap;
+    transition: background-color .3s;
+    vertical-align: middle;
+    width: $button-floating-size;
+    z-index: 1001;
+
+    .icon {
+        line-height: inherit;
+        @extend .icon-36;
+        position: absolute;
+        @include center;
+    }
+
+    &.left {
+        left: $button-floating-gap;
+    }
+
+    &.center {
+        left: calc(50% - 28px);
+        right: calc(50% - 28px);
+    }
+
+    &.small {
+        height: $button-fixed-small-size;
+        width: $button-fixed-small-size;
+        line-height: $button-fixed-small-size;
+        padding: $button-fixed-small-padding;
+
+    }
+
+    &:hover {
+        background-color: $button-floating-background-hover;
+        @include box-shadow(1.5);
+    }
+
+    &~main {
+        padding-bottom: 94px;
+    }
+
+    @include sm() {
+        display: none !important;
+    }
+}
+
+// Dropdown button

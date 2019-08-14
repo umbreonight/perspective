@@ -1,6 +1,6 @@
 @mixin button-base {
     -webkit-tap-highlight-color: transparent;
-    background-color: $button-background;
+    background-color: $dark-gray;
     border-radius: $button-border-radius;
     border: $button-border;
     color: $button-color;
@@ -21,10 +21,6 @@
     user-select: none;
     vertical-align: middle;
     overflow: hidden;
-
-    &:hover {
-        background-color: $button-background-hover;
-    }
 
     & .icon {
         line-height: inherit !important;
