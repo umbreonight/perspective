@@ -1,0 +1,114 @@
+.switch {
+    display: flex;
+    flex-direction: column;
+    margin: 13px 0;
+
+    & input {
+        display: none;
+    }
+
+    & label {
+        outline: 0;
+        display: block;
+        width: $switch-label-width;
+        height: $switch-label-height;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+
+        &::after,
+        &::before {
+            position: relative;
+            display: block;
+            content: '';
+            width: 50%;
+            height: 100%;
+        }
+
+        &::after {
+            left: 0;
+            border-radius: $border-radius;
+            background: $gray-200;
+            transition: all .2s ease;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        background: #fff;
+        border: 1px solid $border;
+        border-radius: $border-radius;
+        padding: 2px;
+        transition: all .4s ease;
+    }
+
+    input {
+        &:checked+label::after {
+            left: 50%;
+        }
+
+        &:disabled,
+        &[disabled] {
+            +label {
+                background-color: $gray-500 !important;
+                cursor: unset;
+            }
+
+            +label::after {
+                background-color: $gray-200;
+            }
+        }
+
+        &:checked+label {
+            background: $primary;
+
+            &::after {
+                background: $white;
+                transition: all .2s ease;
+            }
+        }
+    }
+
+    span {
+        &:first-child {
+            margin-bottom: 7px;
+        }
+
+        &:last-child {
+            margin-top: 7px;
+        }
+    }
+
+    &.rounded {
+        label {
+            border-radius: 2em;
+            padding: 2px;
+            transition: all .4s ease;
+
+            &::after {
+                border-radius: 50%;
+                transition: all .2s ease;
+            }
+        }
+    }
+
+    &.small {
+        label {
+            width: 3em;
+            height: 1.5em;
+        }
+    }
+
+    &.is-disabled {
+        & label {
+            background-color: $gray-500 !important;
+            cursor: unset;
+            pointer-events: none;
+
+            &::after {
+                background-color: $gray-200;
+            }
+        }
+    }
+}
